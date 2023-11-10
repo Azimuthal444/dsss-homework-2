@@ -1,7 +1,8 @@
+""" Module for Math Quiz"""
 import random
 
 
-def get_random_int(min: int, max: int) -> int:
+def get_random_int(min_val: int, max_val: int) -> int:
     """Returns a random value between min & max
 
     Args:
@@ -11,7 +12,7 @@ def get_random_int(min: int, max: int) -> int:
     Returns:
         int: Random integer
     """
-    return random.randint(min, max)
+    return random.randint(min_val, max_val)
 
 
 def get_math_operator() -> str:
@@ -45,6 +46,7 @@ def generate_question(num_1: int, num_2: int, operator: str) -> tuple[str, int]:
 
 
 def math_quiz():
+    """Main function for Math Quiz"""
     score = 0
     total_questions = 3
 
