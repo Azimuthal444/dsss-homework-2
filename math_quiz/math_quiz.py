@@ -62,13 +62,15 @@ def math_quiz():
 
         problem, answer = generate_question(num_1, num_2, operator)
         print(f"\nQuestion: {problem}")
-        user_answer = int(input("Your answer: "))
-
-        if user_answer == answer:
-            print("Correct! You earned a point.")
-            score += 1
-        else:
-            print(f"Wrong answer. The correct answer is {answer}.")
+        try:
+            user_answer = int(input("Your answer: "))
+            if user_answer == answer:
+                print("Correct! You earned a point.")
+                score += 1
+            else:
+                print(f"Wrong answer. The correct answer is {answer}.")
+        except ValueError:
+            print("Oops! That was not a valid number. You lost a chance!")
 
     print(f"\nGame over! Your score is: {score}/{total_questions}")
 
