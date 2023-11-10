@@ -1,18 +1,39 @@
 import random
 
 
-def get_random_int(min, max):
+def get_random_int(min: int, max: int) -> int:
+    """Returns a random value between min & max
+
+    Args:
+        min (int): Minimum value
+        max (int): Maximum value
+
+    Returns:
+        int: Random integer
     """
-    Random integer.
-    """
-    return random.randint(int(min), int(max))
+    return random.randint(min, max)
 
 
-def get_math_operator():
+def get_math_operator() -> str:
+    """Returns a random math operator from [+,-,*]
+
+    Returns:
+        str: Math operator
+    """
     return random.choice(["+", "-", "*"])
 
 
-def generate_question(num_1, num_2, operator):
+def generate_question(num_1: int, num_2: int, operator: str) -> tuple[str, int]:
+    """Returns a math question
+
+    Args:
+        num_1 (int): First number
+        num_2 (int): Second number
+        operator (str): Math operator
+
+    Returns:
+        tuple[str, int]: Returns a tuple of problem (str) and answer (int)
+    """
     problem = f"{num_1} {operator} {num_2}"
     if operator == "+":
         answer = num_1 + num_2
@@ -34,7 +55,7 @@ def math_quiz():
 
     for _ in range(total_questions):
         num_1 = get_random_int(1, 10)
-        num_2 = get_random_int(1, 5.5)
+        num_2 = get_random_int(1, 5)
         operator = get_math_operator()
 
         problem, answer = generate_question(num_1, num_2, operator)
